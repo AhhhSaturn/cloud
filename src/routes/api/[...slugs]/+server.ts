@@ -1,5 +1,8 @@
 import { redis } from "bun";
 import { Elysia, t } from "elysia";
+import { drizzle } from "drizzle-orm/bun-sql";
+
+const db = drizzle(process.env.DATABASE_URL!);
 
 const app = new Elysia({ prefix: "/api" })
 	.post("/", async ({ body }) => await redis.hgetall(body), {
