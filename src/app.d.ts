@@ -10,4 +10,14 @@ declare global {
 	}
 }
 
+declare module "bun" {
+	interface Env {
+		DISCORD_TOKEN: string;
+		DISCORD_SECRET: string;
+		DISCORD_CALLBACK: string;
+		CLIENT_ID: string;
+		DATABASE_URL: string;
+	}
+}
+
 export {};
